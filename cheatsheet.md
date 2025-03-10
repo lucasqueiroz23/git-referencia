@@ -1,10 +1,13 @@
 # Git Cheatsheet
 
 ## Configuração
+Para configurar o git, utilize o comando `git config`. A flag `--global` indica que aquela configuração vale independentemente do repositório que está sendo acessado.
+
+Exemplo de uso:
 ```sh
 $ git config --global user.name "Seu Nome"
 $ git config --global user.email "seuemail@example.com"
-$ git config --list
+$ git config --list # mostra a lista de configurações 
 ```
 
 ## Inicializando um repositório
