@@ -15,6 +15,7 @@ Muitas vezes, você não será o único a realizar um trabalho em um commit, mas
 `Co-authored-by: nome do co-autor <email>`.
 
 Ex:
+
 ```
 feat: adiciona Dockerfile para o back-end
 
@@ -41,6 +42,7 @@ Adiciona endpoint para busca de usuários cadastrados
 
 Você também pode adicionar comentários, caso julgue necessário:
 Ex:
+
 ```
 Adiciona endpoint para busca de usuários cadastrados
 
@@ -56,6 +58,7 @@ Convenções e padrões de commits facilitam a leitura do histórico de commits.
 - **fix**: conserta algum bug ou realiza qualquer alteração que não é exatamente um feat;
 
 Exemplo de uso:
+
 ```
 docs: atualiza README com informações dos membros da equipe
 
@@ -77,7 +80,45 @@ Na plataforma git, ao abrir a issue #23, pode-se encontrar uma referência para 
 
 ## Pull Requests / Merge Requests
 
-### Não altere 1000 arquivos em um MR
+### Não faça uma release inteira em um PR
+
+Mantenha as branches concisas. Certifique-se de que cada branch tem um conjunto de alterações bem definido e pequeno. Isso torna muito mais fácil a revisão das alterações. Além disso, se você faz muitas alterações em uma só branch, é muito possível que, ao longo do tempo, outras branches foram mescladas à branch original, de forma que algumas de suas alterações podem estar obsoletas.
+
+### Ao aceitar um PR, apague a branch aceita
+
+Isso serve simplesmente para não poluir o conjunto de branches com branches já mescladas e inativas.
+
+### Opções de merge
+
+Ao aceitar um PR, algumas opções de merge podem ser escolhidas. Das 3 abaixo, `rebase and merge` e `squash and merge` oferecem uma possibilidade de manter um histórico de commits mais limpos.
+
+![Imagem descritiva de como funcionam as opções de merge](./images/merge.png)
+
+#### Merge commits
+
+Essa opção adicionará todos os commits da branch nova à branch de destino, e adicionará um commit extra de merge.
+
+#### Rebase and merge
+
+Quando um PR for aceito, é possível escolher a opção `rebase and merge` para mesclá-lo à branch de destino. Essa opção faz com que o histórico de commits fique mais limpo e linear.
+
+**OBS**: de maneira simples, o rebase vai adicionar (append) os commits da branch nova ao final dos commits da branch de destino, sem um commit adicional de merge. 
+
+#### Squash and merge
+
+Nesta opção, todos os commits da branch nova serão reduzidos a apenas um, e ele será adicionado (append) ao final dos commits da branch de destino. 
+
+### Antes de abrir o PR, realize os testes necessários localmente
+
+Isso parece óbvio (porque é mesmo), mas é muito comum que pessoas realizem as alterações na sua branch feature e, ao final do trabalho, abram o PR sem realizar os testes necessários (unitários, de integração, etc). Isso gera perda de tempo. 
+
+### Ao revisar o PR, procure o óbvio
+
+Pergunte-se se o código é legível, se os nomes de variáveis têm alguma significância de fato, se o código está bem documentado, se testes foram escritos, e por aí vai. Neste passo, o uso de `Pull request templates` pode ajudar tanto o autor do código quanto o revisor, visto que esses templates podem trazer um checklist com requisitos para que a branch seja mesclada.
+
+### Ao revisar o PR, procure coisas não tão óbvias assim
+
+Embora a dica acima seja um bom primeiro passo, muitas vezes, o problema está nos detalhes: existe algum erro na lógica da solução apresentada? O design da solução faz sentido mesmo para o problema apresentado? Existem problemas futuros que podem aparecer caso essa solução seja aceita? Se sim, vale a pena seguir em frente ou é melhor mudar de solução? 
 
 ## Issues
 
