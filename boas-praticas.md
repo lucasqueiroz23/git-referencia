@@ -120,6 +120,32 @@ Pergunte-se se o código é legível, se os nomes de variáveis têm alguma sign
 
 Embora a dica acima seja um bom primeiro passo, muitas vezes, o problema está nos detalhes: existe algum erro na lógica da solução apresentada? O design da solução faz sentido mesmo para o problema apresentado? Existem problemas futuros que podem aparecer caso essa solução seja aceita? Se sim, vale a pena seguir em frente ou é melhor mudar de solução? 
 
+### Utilize Pull Request Templates
+
+O uso de `pull request templates` pode facilitar a aplicação das boas práticas descritas acima. 
+
 ## Issues
+
+### Utilize Issue Templates para diminuir a carga cognitiva
+
+Issues são excelentes para documentar o trabalho necessário para atingir os objetivos do projeto. Escrevê-las, por outro lado, pode se mostrar trabalhoso. O uso de `issue templates` facilita esse processo (e o processo de desenvolvimento como um todo), pois padroniza o tipo de issues que serão criadas no projeto, acelerando o processo de escrita. 
+
+### Use Labels
+
+Uma issue pode ser atrelada em algumas labels, que ajudam a identificar qual é o tipo de issue que está sendo tratada. Alguns exemplos de labels são:
+
+- feature: issues com essa label tratam de novas funcionalidades no código;
+- documentation: issues com essa label tratam de alterações na documentação do projeto;
+- fix: issues com essa label tratam de consertos de bugs;
+
+E assim por diante. Plataformas como o gitlab e o github trazem um conjunto padrão de labels para cada projeto, mas essas podem ser ou não utilizadas. Além disso, novas labels podem ser criadas, de maneira personalizada para cada projeto.
+
+### Defina assignees
+
+Um assignee, basicamente, é aquele que vai realizar o trabalho solicitado por uma issue. O uso de assignees facilita o processo de desenvolvimento, visto que define quem fará o quê no projeto.
+
+### Quando possível, utilize Kanban Boards
+
+O gitlab permite que o sistema de issues seja utilizado para a aplicação de [kanban boards](https://www.atlassian.com/agile/kanban/boards) no projeto. Essa ferramenta é muito utilizada para facilitar o gerenciamento de projetos.
 
 ## Políticas de branches
