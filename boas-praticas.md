@@ -149,3 +149,19 @@ Um assignee, basicamente, é aquele que vai realizar o trabalho solicitado por u
 O gitlab permite que o sistema de issues seja utilizado para a aplicação de [kanban boards](https://www.atlassian.com/agile/kanban/boards) no projeto. Essa ferramenta é muito utilizada para facilitar o gerenciamento de projetos.
 
 ## Políticas de branches
+
+### O que são?
+
+Políticas de branches são regras, definidas pela equipe do projeto, que dizem como as branches devem ser utilizadas. Essas regras vão desde a nomenclatura das branches até a forma com a qual elas serão criadas e mescladas. Alguns exemplos são:
+
+- uma branch por issue;
+- uma branch por feature;
+- uma branch por dupla (caso em que o [pair programming](https://www.techtarget.com/searchsoftwarequality/definition/Pair-programming) é atividade comum no processo);
+
+Entre outras. 
+
+### Gitflow
+
+O gitflow é uma estratégia de branching que funciona, basicamente, da seguinte forma: uma branch principal (`main`) contém o produto. Uma branch secundária (`develop`) contém o código de desenvolvimento. Branches são criadas a partir da develop para adicionar novas funcionalidades, consertar bugs, e etc. Ao final do desenvolvimento na develop, ela é mesclada à main. Branches de conserto (`hotfix`) também podem ser criadas a partir da main para consertos de bugs em produção.
+
+![gitflow](./images/gitflow.webp)
